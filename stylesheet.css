@@ -24,14 +24,14 @@ html, body {
 html {
     background-color: var(--dark-grey);
     padding: max(calc(50vh - 29.7cm / 2), 2rem) 2rem;
-    /* needs this to make vertical margin colission work */
 }
 
 body {
     background-color: white;
     width: 21cm;
-    margin: 0 auto;    
-    /* to make it clip bottom and not make black bar at top */
+    min-height: 29.7cm;
+    margin: 0 auto;
+    padding: 0;
 }
 
 body > div {
@@ -39,9 +39,8 @@ body > div {
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto 1fr auto;
     gap: 1rem 1rem;
-    height: calc(100% - 2rem);
-    box-sizing: border-box;
     margin: 1rem;
+    padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
