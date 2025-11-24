@@ -312,3 +312,28 @@ a, a:visited, a:hover {
         font-size: 12px !important;
     }
 }
+
+
+/* PDF PAGE BREAK CONTROL */
+@media print {
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+    
+    .subgrid, .subgrid > div {
+        page-break-inside: avoid;
+    }
+    
+    .innerskill {
+        page-break-inside: avoid;
+    }
+    
+    section {
+        page-break-inside: auto;
+    }
+    
+    .side-box > div {
+        page-break-inside: avoid;
+    }
+}
