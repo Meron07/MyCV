@@ -206,22 +206,33 @@
     <script>
         function downloadPDF() {
             const button = document.getElementById('download-pdf');
-            
-            // Hide download button and marquee from PDF
             const marquee = document.querySelector('marquee');
+            
+            // Hide elements that should not be in PDF
             button.style.display = 'none';
             if (marquee) marquee.style.display = 'none';
             
             const element = document.body;
             const opt = {
-                margin: 0.5,
+                margin: [0.5, 0.5, 0.5, 0.5],
                 filename: 'Meron_Berhe_Kidane_CV.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                }
             };
             
             html2pdf().set(opt).from(element).save().then(() => {
+                // Show elements again after PDF generation
                 button.style.display = 'block';
                 if (marquee) marquee.style.display = 'block';
             });
