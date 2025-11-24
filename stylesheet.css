@@ -224,6 +224,10 @@ a, a:visited, a:hover {
     html {
         padding: 0;
     }
+    
+    body {
+        margin: 0;
+    }
 }
 
 
@@ -310,33 +314,5 @@ a, a:visited, a:hover {
     #download-pdf {
         padding: 6px 12px !important;
         font-size: 12px !important;
-    }
-}
-
-
-/* PDF PAGE BREAK CONTROL */
-@media print {
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    body {
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-    
-    h1, h2 {
-        page-break-after: avoid;
-    }
-    
-    .subgrid > div {
-        page-break-inside: avoid;
-        margin-bottom: 0.5rem;
-    }
-    
-    section {
-        page-break-inside: auto;
     }
 }
