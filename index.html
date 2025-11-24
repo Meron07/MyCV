@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Noto Sans and Noto Sans Display from Google Fonts -->
@@ -12,7 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@100;200;300;400;700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" crossorigin="anonymous"></script>
     
     <title>CV | Meron Berhe Kidane</title>
 </head>
@@ -205,7 +206,11 @@
     <script>
         function downloadPDF() {
             const button = document.getElementById('download-pdf');
+            
+            // Hide download button and marquee from PDF
+            const marquee = document.querySelector('marquee');
             button.style.display = 'none';
+            if (marquee) marquee.style.display = 'none';
             
             const element = document.body;
             const opt = {
@@ -218,6 +223,7 @@
             
             html2pdf().set(opt).from(element).save().then(() => {
                 button.style.display = 'block';
+                if (marquee) marquee.style.display = 'block';
             });
         }
     </script>
