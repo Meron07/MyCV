@@ -206,3 +206,90 @@ a, a:visited, a:hover {
         padding: 0;
     }
 }
+
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    html {
+        padding: 1rem;
+    }
+
+    body {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    body > div {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1.5rem;
+    }
+
+    .title-box {
+        margin: 1rem 0;
+    }
+
+    .title-subgrid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    section[style*="grid-row: 2"],
+    section[style*="grid-row: 3"] {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+    }
+
+    .side-box {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+    }
+
+    .skills {
+        flex-direction: column;
+    }
+
+    .innerskill {
+        margin: 0.5rem 0;
+    }
+
+    .subgrid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .subgrid b {
+        padding-top: 1rem;
+    }
+
+    #download-pdf {
+        position: fixed !important;
+        top: 10px !important;
+        right: 10px !important;
+        padding: 8px 16px !important;
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #download-pdf {
+        padding: 6px 12px !important;
+        font-size: 12px !important;
+    }
+}
