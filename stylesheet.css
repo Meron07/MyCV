@@ -190,12 +190,31 @@ a, a:visited, a:hover {
 .skills{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
 .innerskill{
     display: flex;
     flex-direction: column;
-    margin: 0 1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.innerskill b {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.innerskill ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    list-style-type: disc;
+}
+
+.innerskill li {
+    margin-bottom: 0.3rem;
 }
 
 
