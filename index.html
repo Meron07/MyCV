@@ -214,20 +214,23 @@
             
             const element = document.body;
             const opt = {
-                margin: [0.5, 0.5, 0.5, 0.5],
+                margin: [0.3, 0.3, 0.3, 0.3],
                 filename: 'Meron_Berhe_Kidane_CV.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { 
-                    scale: 2,
+                    scale: 4,
                     useCORS: true,
                     logging: false,
-                    letterRendering: true
+                    letterRendering: true,
+                    backgroundColor: '#ffffff',
+                    windowWidth: 1920
                 },
                 jsPDF: { 
                     unit: 'in', 
                     format: 'a4', 
                     orientation: 'portrait',
-                    compress: true
+                    compress: false,
+                    precision: 16
                 }
             };
             
