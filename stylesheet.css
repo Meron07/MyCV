@@ -316,24 +316,27 @@ a, a:visited, a:hover {
 
 /* PDF PAGE BREAK CONTROL */
 @media print {
-    h1, h2, h3, h4 {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    h1, h2 {
         page-break-after: avoid;
-        page-break-inside: avoid;
     }
     
-    .subgrid, .subgrid > div {
+    .subgrid > div {
         page-break-inside: avoid;
-    }
-    
-    .innerskill {
-        page-break-inside: avoid;
+        margin-bottom: 0.5rem;
     }
     
     section {
         page-break-inside: auto;
-    }
-    
-    .side-box > div {
-        page-break-inside: avoid;
     }
 }

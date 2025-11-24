@@ -214,7 +214,7 @@
             
             const element = document.body;
             const opt = {
-                margin: [0.3, 0.3, 0.3, 0.3],
+                margin: [0.2, 0.3, 0.2, 0.3],
                 filename: 'Meron_Berhe_Kidane_CV.pdf',
                 image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { 
@@ -233,10 +233,9 @@
                     precision: 16
                 },
                 pagebreak: { 
-                    mode: ['avoid-all', 'css', 'legacy'],
+                    mode: 'css',
                     before: '.page-break-before',
-                    after: '.page-break-after',
-                    avoid: ['h1', 'h2', 'h3', 'h4', '.subgrid', '.innerskill']
+                    after: '.page-break-after'
                 }
             };
             
